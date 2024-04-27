@@ -146,6 +146,16 @@
           <script>
           var canvas = document.getElementById('game');
           var context = canvas.getContext('2d');
+
+
+          window.addEventListener("keydown", function(event) {
+  // Check if the key pressed is an arrow key (37-40)
+          if([37, 38, 39, 40].includes(event.keyCode)) {
+    // Prevent the default action (scrolling)
+    event.preventDefault();
+         }
+        }, false);
+
           
           // the canvas width & height, snake x & y, and the apple x & y, all need to be a multiples of the grid size in order for collision detection to work
           // (e.g. 16 * 25 = 400)
