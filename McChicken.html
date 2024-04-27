@@ -142,27 +142,7 @@
             The McChicken, oh yes, it takes the town!</p>
             
 
-
-            <meta charset="UTF-8">
-            <style>
-            html, body {
-              height: 100%;
-              margin: 0;
-            }
-          
-            body {
-              background: black;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            }
-            canvas {
-              border: 1px solid white;
-            }
-            </style>
-          </head>
-          <body>
-          <canvas width="400" height="400" id="game"></canvas>
+          <canvas width="700" height="700" id="game"></canvas>
           <script>
           var canvas = document.getElementById('game');
           var context = canvas.getContext('2d');
@@ -236,10 +216,11 @@
             if (snake.cells.length > snake.maxCells) {
               snake.cells.pop();
             }
-          
+          // Load the apple image
+var appleImage = new Image();
+appleImage.src = 'mcchicken.png'; // replace with your image path
             // draw apple
-            context.fillStyle = 'mcchicken.png';
-            context.fillRect(apple.x, apple.y, grid-1, grid-1);
+            context.drawImage(appleImage, apple.x, apple.y, grid-1, grid-1);
           
             // draw snake one cell at a time
             context.fillStyle = 'green';
